@@ -21,7 +21,8 @@ class ExpenseCategoriesController extends Controller
     public function index()
     {
         if (! Gate::allows('expense_category_access')) {
-            return abort(401);
+            // return abort(401);
+            return 'not exit';
         }
         if ($filterBy = Input::get('filter')) {
             if ($filterBy == 'all') {

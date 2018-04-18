@@ -41,7 +41,25 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('currencies_restore/{id}', ['uses' => 'Admin\CurrenciesController@restore', 'as' => 'currencies.restore']);
     Route::delete('currencies_perma_del/{id}', ['uses' => 'Admin\CurrenciesController@perma_del', 'as' => 'currencies.perma_del']);
 
+    // Route::resource('/admin/attendance' ,'AttendanceController');
 
+    Route::get('/admin/attendance','AttendanceController@index');
+    Route::get('/admin/attendance','AttendanceController@all');
+    Route::get('/admin/attendance/search', function () {
+        return view('admin/attendance/search');
+    });
+    Route::get('/admin/addAttendance','AttendanceController@addAttendance');
+    Route::get('/admin/attendance/details/{id}','AttendanceController@getAttendance');
+    Route::get('/admin/attendance/edit/{id}','AttendanceController@editAttendance');
+    Route::get('/admin/attendance/delete/{id}','AttendanceController@deleteAttendance');
+
+    Route::post('/admin/trytoaddattendance','AttendanceController@create');
+    Route::post('/admin/trytoupdateattendance',array('uses'=>'AttendanceController@update'));
+    Route::post('/admin/trytodeleteattendance',array('uses'=>'AttendanceController@delete'));
+    Route::post('/admin/attendance/byDate','AttendanceController@searchByDate');
+    Route::post('/admin/attendance/byMonth','AttendanceController@searchByMonth');
+    Route::post('/admin/attendance/byYear','AttendanceController@searchByYear');
+    Route::post('/admin/attendance/byUsername','AttendanceController@searchByUsername');
 
  
 });
