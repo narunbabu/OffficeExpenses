@@ -3,7 +3,7 @@
 return [
 	
 	'user-management' => [
-		'title' => 'User management',
+		'title' => 'User management5',
 		'fields' => [
 		],
 	],
@@ -82,6 +82,103 @@ return [
 			'money-format-thousands' => 'Money format for thousands',
 			'money-format-decimal' => 'Money format for decimal',
 			'created-by' => 'Created by',
+		],
+	],
+
+	'office-management' => [
+		'title' => 'Office management',
+		'fields' => [
+		],
+	],
+	
+	'attendance' => [
+		'title' => 'Attendance',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'todayattendance' => [
+		'title' => 'Todays Attendance',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'addattendance' => [
+		'title' => 'Add Attendance',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'searchattendance' => [
+		'title' => 'Search Attendance',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'listattendance' => [
+		'title' => 'List of Attendance',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'employees' => [
+		'title' => 'Employees',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'listemployees' => [
+		'title' => 'List of Employees',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'addemployees' => [
+		'title' => 'Add Employee',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'tasks' => [
+		'title' => 'Tasks',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'listtasks' => [
+		'title' => 'List of Tasks',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'addtasks' => [
+		'title' => 'Add Tasks',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'owntasks' => [
+		'title' => 'Own Tasks',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+	'mytasks' => [
+		'title' => 'My Tasks',
+		'fields' => [
+			'title' => 'Title',
 		],
 	],
 	'qa_create' => 'Create',

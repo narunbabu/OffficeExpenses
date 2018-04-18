@@ -78,7 +78,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('expense_category_delete')
             window.route_mass_crud_entries_destroy = '{{ route('admin.expense_categories.mass_destroy') }}';
