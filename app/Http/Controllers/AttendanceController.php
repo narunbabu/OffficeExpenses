@@ -175,7 +175,7 @@ class AttendanceController extends Controller
     }
 
     public function create(Request $request){
-
+        
         $date = $request->input('date');
         $username = $request->input('username');
         $attendance = (int)$request->input('attendance');

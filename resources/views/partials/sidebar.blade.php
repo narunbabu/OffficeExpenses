@@ -314,30 +314,36 @@
                             @lang('quickadmin.attendance.title')
                         </span>
                     </a>
+
+                    <ul class="treeview-menu">
+                        @can('today_attendance_access')
+                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
+                            <a href="{{ route('attendance') }}">
+                            <!-- <a href="/admin/attendance"> -->
+                                <i class="fa fa-briefcase"></i>
+                                <span class="title">
+                                    @lang('quickadmin.todayattendance.title')
+                                </span>
+                            </a>
+                        </li>
+                        @endcan
+
+                        @can('add_attendance_access')
+                        <li class="{{ $request->segment(2) == 'users' ? 'active active-sub' : '' }}">
+                            <a href="{{ route('addAttendance') }}">
+                            {{--  <a href="admin/attendence/addAttendance">  --}}
+                                <i class="fa fa-briefcase"></i>
+                                <span class="title">
+                                    @lang('quickadmin.addattendance.title')
+                                </span>
+                            </a>
+                        </li>
+                        @endcan
+
+                    </ul>
                 </li>
                 @endcan
-                @can('today_attendance_access')
-                <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                    <a href="{{ route('/admin/attendance') }}">
-                    <!-- <a href="/admin/attendance"> -->
-                        <i class="fa fa-briefcase"></i>
-                        <span class="title">
-                            @lang('quickadmin.todayattendance.title')
-                        </span>
-                    </a>
-                </li>
-                @endcan
-                @can('add_attendance_access')
-                <li class="{{ $request->segment(2) == 'users' ? 'active active-sub' : '' }}">
-                    <a href="{{ route('admin.attendance.addAttendance') }}">
-                    <a href="admin/attendence/addAttendance">
-                        <i class="fa fa-briefcase"></i>
-                        <span class="title">
-                            @lang('quickadmin.addattendance.title')
-                        </span>
-                    </a>
-                </li>
-                @endcan
+                
                 @can('search_attendance_access')
                 <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
                     <a href="#">
