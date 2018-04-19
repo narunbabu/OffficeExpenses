@@ -9,7 +9,7 @@ use DB;
 
 class AttendanceController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         // if (! Gate::allows('today_attendance_access')) {
         //     return abort(401);
         // }
@@ -120,7 +120,7 @@ class AttendanceController extends Controller
 
     public function getAttendance(Request $request, $id){
         
-        $data = DB::table('attendance')->where('id', $id)->first();
+        $data = DB::table('attendances')->where('id', $id)->first();
             return view('admin.attendance.detailsAttendance', ['data' => $data]);
         
         // if($request->session()->has('currentUser')){
@@ -134,7 +134,7 @@ class AttendanceController extends Controller
 
     public function editAttendance(Request $request, $id){
         
-        $data = DB::table('attendance')->where('id', $id)->first();
+        $data = DB::table('attendances')->where('id', $id)->first();
             return view('admin.attendance.editAttendance', ['data' => $data]);
         
         // if($request->session()->has('currentUser')){
@@ -162,7 +162,7 @@ class AttendanceController extends Controller
 
     public function deleteAttendance(Request $request, $id){
         
-        $data = DB::table('attendance')->where('id', $id)->first();
+        $data = DB::table('attendances')->where('id', $id)->first();
             return view('admin.attendance.deleteAttendance', ['data' => $data]);
         
         // if($request->session()->has('currentUser')){
@@ -175,7 +175,7 @@ class AttendanceController extends Controller
     }
 
     public function create(Request $request){
-
+        
         $date = $request->input('date');
         $username = $request->input('username');
         $attendance = (int)$request->input('attendance');
@@ -227,33 +227,33 @@ class AttendanceController extends Controller
         // }
     }
 
-    public function update(Request $request){
+    // public function update(Request $request){
 
-        $id = $request->input('id');
-        $name = $request->input('name');
-        $username = $request->input('username');
-        $position = $request->input('position');
-        $admin = $request->input('admin');
-        $email = $request->input('email');
-        $password = $request->input('password');
+    //     $id = $request->input('id');
+    //     $name = $request->input('name');
+    //     $username = $request->input('username');
+    //     $position = $request->input('position');
+    //     $admin = $request->input('admin');
+    //     $email = $request->input('email');
+    //     $password = $request->input('password');
 
-        date_default_timezone_set('Asia/Dhaka');
-        $date = date('Y-m-d H:i:s', time());
+    //     date_default_timezone_set('Asia/Dhaka');
+    //     $date = date('Y-m-d H:i:s', time());
 
-        $data = array('name' => $name, 
-                    'username' => $username, 
-                    'position' => $position, 
-                    'admin' => $admin, 
-                    'email' => $email, 
-                    'password' => $password, 
-                    'updated_at' => $date);
+    //     $data = array('name' => $name, 
+    //                 'username' => $username, 
+    //                 'position' => $position, 
+    //                 'admin' => $admin, 
+    //                 'email' => $email, 
+    //                 'password' => $password, 
+    //                 'updated_at' => $date);
 
-        if(DB::table('attendances')->where('id', $id)->update($data)){
-            return redirect('/admin/attendance');
-        }
-        else{
-            var_dump(DB::table('attendances')->where('id', $id)->update($data));
-        }
+    //     if(DB::table('attendances')->where('id', $id)->update($data)){
+    //         return redirect('/admin/attendance');
+    //     }
+    //     else{
+    //         var_dump(DB::table('attendances')->where('id', $id)->update($data));
+    //     }
         
         // if($request->session()->has('currentUser')){
         //     $id = $request->input('id');
@@ -279,7 +279,7 @@ class AttendanceController extends Controller
         // else{
         //     return view('errors/unauthorized');
         // }
-    }
+    // }
 
     public function delete(Request $request){
 
@@ -299,5 +299,33 @@ class AttendanceController extends Controller
         // else{
         //     return view('errors/unauthorized');
         // }
+    }
+
+    public function update(Request $request){
+        
+        $date = $request->input('date');
+        $username = $request->input('username');
+        $attendance = (int)$request->input('attendance');
+        $in = $request->input('in');
+        $out = $request->input('out');
+
+        date_default_timezone_set('Asia/Dhaka');
+        $currentDate = date('Y-m-d H:i:s', time());
+
+        $data = array('date' => $date, 
+                    'username' => $username, 
+                    'attendance' => $attendance, 
+                    'in' => $in, 
+                    'out' => $out, 
+                    'created_at' => $currentDate, 
+                    'updated_at' => $currentDate);
+        
+        if(DB::table('attendances')->insert($data)){
+            return redirect('/admin/attendance');
+        }
+        else{
+            var_dump(DB::table('attendances')->insert($data));
+        }
+        return redirect('/admin/attendance');
     }
 }

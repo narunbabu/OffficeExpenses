@@ -1,7 +1,9 @@
+@inject('request', 'Illuminate\Http\Request')
 @extends('layouts.app')
 
 @section('content')
     <center>
+    <!-- <h3 class="page-title">@lang('quickadmin.detailsattendance.title')</h3> -->
         <h1>Details Attendance</h1>
 	    <hr />
 	        <table class="table table-striped" style="max-width: 50%" id="table">

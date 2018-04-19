@@ -23,6 +23,7 @@ $this->post('register', 'Auth\RegisterController@register')->name('auth.register
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/home', 'HomeController@index');
     
+
     Route::resource('roles', 'Admin\RolesController');
     Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
     Route::resource('users', 'Admin\UsersController');
@@ -42,24 +43,47 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::delete('currencies_perma_del/{id}', ['uses' => 'Admin\CurrenciesController@perma_del', 'as' => 'currencies.perma_del']);
 
     // Route::resource('/admin/attendance' ,'AttendanceController');
-
-    Route::get('/admin/attendance','AttendanceController@index');
-    Route::get('/admin/attendance','AttendanceController@all');
-    Route::get('/admin/attendance/search', function () {
-        return view('admin/attendance/search');
-    });
-    Route::get('/admin/addAttendance','AttendanceController@addAttendance');
-    Route::get('/admin/attendance/details/{id}','AttendanceController@getAttendance');
-    Route::get('/admin/attendance/edit/{id}','AttendanceController@editAttendance');
-    Route::get('/admin/attendance/delete/{id}','AttendanceController@deleteAttendance');
-
-    Route::post('/admin/trytoaddattendance','AttendanceController@create');
-    Route::post('/admin/trytoupdateattendance',array('uses'=>'AttendanceController@update'));
-    Route::post('/admin/trytodeleteattendance',array('uses'=>'AttendanceController@delete'));
-    Route::post('/admin/attendance/byDate','AttendanceController@searchByDate');
-    Route::post('/admin/attendance/byMonth','AttendanceController@searchByMonth');
-    Route::post('/admin/attendance/byYear','AttendanceController@searchByYear');
-    Route::post('/admin/attendance/byUsername','AttendanceController@searchByUsername');
+    // Route::get('attendance','AttendanceController@index')->name('attendance');
+    
+    
 
  
 });
+//for ATTENDANCE routes
+Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function (){
+    Route::get('attendance','AttendanceController@index')->name('attendance');
+    Route::get('addAttendance','AttendanceController@addAttendance')->name('addAttendance');
+    
+    Route::get('attendances','AttendanceController@all')->name('attendances');
+    Route::get('attendance/search', function () {
+        return view('admin/attendance/search');
+    });
+    Route::get('attendance/details/{id}','AttendanceController@getAttendance');
+    Route::get('attendance/edit/{id}','AttendanceController@editAttendance');
+    Route::get('attendance/delete/{id}','AttendanceController@deleteAttendance');
+
+    Route::post('trytoaddattendance','AttendanceController@create')->name('trytoaddattendance');
+    Route::post('trytoupdateattendance','AttendanceController@update')->name('trytoupdateattendance');
+    Route::post('trytodeleteattendance','AttendanceController@delete')->name('trytodeleteattendance');
+    Route::post('attendance/byDate','AttendanceController@searchByDate');
+    Route::post('attendance/byMonth','AttendanceController@searchByMonth');
+    Route::post('attendance/byYear','AttendanceController@searchByYear');
+    Route::post('attendance/byUsername','AttendanceController@searchByUsername');
+
+// for EMPLOYEES routes
+    Route::get('employees','EmployeesController@index')->name('employee');
+    Route::get('addemployee','EmployeesController@addEmployee')->name('addemployee');
+    Route::get('employee/details/{id}','EmployeesController@getEmployee');
+    Route::get('employee/edit/{id}','EmployeesController@editEmployee');
+    Route::get('employee/delete/{id}','EmployeesController@deleteEmployee');
+    Route::post('trytoaddemployee','EmployeesController@create');
+    Route::post('trytoupdateemployee',array('uses'=>'EmployeesController@update'));
+    Route::post('trytodeleteemployee',array('uses'=>'EmployeesController@delete'));
+
+//for TASKS routes
+    Route::get('tasks','TasksController@index')->name('task');
+    Route::get('addtask','TasksController@addTask')->name('addtask');
+    Route::get('mytasks','TasksController@adminTasks')->name('mytask');
+});
+
+

@@ -1,9 +1,10 @@
+@inject('request', 'Illuminate\Http\Request')
 @extends('layouts.app')
 
 @section('content')
     <h2>Add Attendance</h2>
     <hr/>
-        <form class="m-t" method="post" action="{{ url('/admin/attendance/byDate') }}" enctype="multipart/form-data">
+        <form class="m-t" method="post" action="{{ url('attendance/byDate') }}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-horizontal">
                 <div class="form-group">

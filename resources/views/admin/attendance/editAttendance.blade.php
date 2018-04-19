@@ -1,9 +1,10 @@
+@inject('request', 'Illuminate\Http\Request')
 @extends('layouts.app')
 
 @section('content')
     <h2>Update Attendance</h2>
     <hr />
-	<form class="m-t" method="post" action="{{ url('/admin/trytoupdateattendance') }}" enctype="multipart/form-data">
+	<form class="m-t" method="post" action="{{ route('trytoupdateattendance') }}" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<input type="hidden" value="{{ $data->id}}" id="id" name="id">
             <div class="form-horizontal">
@@ -42,7 +43,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-10" align="left">
-                        <input type="submit" value="Update" class="btn btn-primary block full-width m-b" />.
+                        <input type="submit" value="Update" class="btn btn-primary block full-width m-b" />
                     </div>
                 </div>
 			</div>
