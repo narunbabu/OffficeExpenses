@@ -4,7 +4,7 @@
 @section('content')
     <h2>Create Task</h2>
     <hr />
-        <form class="m-t" method="post" action="{{ url('/admin/trytoaddtask') }}" enctype="multipart/form-data">
+        <form class="m-t" method="post" action="{{ route('trytoaddtask')}}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-horizontal">
 				    <input class="form-control" type="hidden" id="from" name="from" value="{{ session('currentUser') }}">
