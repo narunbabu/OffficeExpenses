@@ -43,12 +43,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::delete('currencies_perma_del/{id}', ['uses' => 'Admin\CurrenciesController@perma_del', 'as' => 'currencies.perma_del']);
 
     // Route::resource('/admin/attendance' ,'AttendanceController');
-    // Route::get('attendance','AttendanceController@index')->name('attendance');
+
     
     
 
  
 });
+
 //for ATTENDANCE routes
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function (){
     Route::get('attendance','AttendanceController@index')->name('attendance');
@@ -84,6 +85,28 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function (){
     Route::get('tasks','TasksController@index')->name('task');
     Route::get('addtask','TasksController@addTask')->name('addtask');
     Route::get('mytasks','TasksController@adminTasks')->name('mytask');
+=======
+
+Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function (){
+    Route::get('attendance','AttendanceController@index')->name('attendance');
+    Route::get('addAttendance','AttendanceController@addAttendance')->name('addAttendance');
+    
+// Route::get('/admin/attendance','AttendanceController@all');
+Route::get('attendance/search', function () {
+    return view('admin/attendance/search');
+});
+Route::get('attendance/details/{id}','AttendanceController@getAttendance');
+Route::get('attendance/edit/{id}','AttendanceController@editAttendance');
+Route::get('attendance/delete/{id}','AttendanceController@deleteAttendance');
+
+Route::post('trytoaddattendance','AttendanceController@create');
+Route::post('trytoupdateattendance',array('uses'=>'AttendanceController@update'));
+Route::post('trytodeleteattendance',array('uses'=>'AttendanceController@delete'));
+Route::post('attendance/byDate','AttendanceController@searchByDate');
+Route::post('attendance/byMonth','AttendanceController@searchByMonth');
+Route::post('attendance/byYear','AttendanceController@searchByYear');
+Route::post('attendance/byUsername','AttendanceController@searchByUsername');
+
 });
 
 
