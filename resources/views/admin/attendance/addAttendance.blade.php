@@ -2,8 +2,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.todayattendance.title')</h3>
-        <form class="m-t" method="post" action="{{ url('/admin/trytoaddattendance') }}" enctype="multipart/form-data">
+    <h3 class="page-title">@lang('quickadmin.addattendance.title')</h3>
+        <form class="m-t" method="post" action="{{ route('trytoaddattendance') }}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-horizontal">
                     <div class="form-group">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-10" align="left">
-                            <input type="submit" value="Create" class="btn btn-primary block full-width m-b" />.
+                            <input type="submit" value="Create" class="btn btn-primary block full-width m-b" />
                         </div>
                     </div>
 				</div>

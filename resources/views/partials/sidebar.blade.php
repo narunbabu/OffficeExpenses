@@ -125,7 +125,7 @@
             </li>
             @endcan
     <!-- for OFFICE-MANAGEMENT-->
-            <!-- @can('office_management_access')
+            @can('office_management_access')
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-users"></i>
@@ -134,22 +134,21 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
-                <ul class="treeview-menu"> -->
+                <ul class="treeview-menu">
                 
-                    <!-- @can('attendance_access') for attendance
-                    <li class="active">
-                        <a href="#">
-                            <i class="fa fa-briefcase"></i>
-                            <span class="title">@lang('quickadmin.attendance.title')</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="">
-                        
+                @can('attendance_access')
+                <li class="{{ $request->segment(2) == 'attendance' ? 'active active-sub' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-briefcase"></i>
+                        <span class="title">
+                            @lang('quickadmin.attendance.title')
+                        </span>
+                    </a>
+
+                    <ul class="treeview-menu">
                         @can('today_attendance_access')
-                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                            <a href="{{ route('admin.roles.index') }}">
+                        <li class="{{ $request->segment(2) == 'todayattendance' ? 'active active-sub' : '' }}">
+                            <a href="{{ route('attendance') }}">
                                 <i class="fa fa-briefcase"></i>
                                 <span class="title">
                                     @lang('quickadmin.todayattendance.title')
@@ -157,10 +156,10 @@
                             </a>
                         </li>
                         @endcan
-                            
+
                         @can('add_attendance_access')
-                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                            <a href="{{ route('admin.roles.index') }}">
+                        <li class="{{ $request->segment(2) == 'addattendance' ? 'active active-sub' : '' }}">
+                            <a href="{{ route('addAttendance') }}">
                                 <i class="fa fa-briefcase"></i>
                                 <span class="title">
                                     @lang('quickadmin.addattendance.title')
@@ -170,8 +169,8 @@
                         @endcan
 
                         @can('search_attendance_access')
-                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                            <a href="{{ route('admin.roles.index') }}">
+                        <li class="{{ $request->segment(2) == 'searchattendance' ? 'active active-sub' : '' }}">
+                            <a href="{{ url('attendance/search') }}">
                                 <i class="fa fa-briefcase"></i>
                                 <span class="title">
                                     @lang('quickadmin.searchattendance.title')
@@ -181,8 +180,8 @@
                         @endcan
 
                         @can('list_attendance_access')
-                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                            <a href="{{ route('admin.roles.index') }}">
+                        <li class="{{ $request->segment(2) == 'listattendance' ? 'active active-sub' : '' }}">
+                            <a href="{{ route('attendances') }}">
                                 <i class="fa fa-briefcase"></i>
                                 <span class="title">
                                     @lang('quickadmin.listattendance.title')
@@ -190,109 +189,78 @@
                             </a>
                         </li>
                         @endcan
-                    </li>
-                    @endcan-->
-
-                    <!-- @can('attendance_access')
-                    <li class="treeview2">
-                        <a href="#">
-                            <i class="fa fa-briefcase"></i>
-                            <span class="title">@lang('quickadmin.attendance.title')</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                        
-                        @can('today_attendance_access')
-                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                            <a href="{{ route('admin.roles.index') }}">
-                                <i class="fa fa-briefcase"></i>
-                                <span class="title">
-                                    @lang('quickadmin.todayattendance.title')
-                                </span>
-                            </a>
-                        </li>
-                        @endcan
-                            
-                        @can('add_attendance_access')
-                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                            <a href="{{ route('admin.roles.index') }}">
-                                <i class="fa fa-briefcase"></i>
-                                <span class="title">
-                                    @lang('quickadmin.addattendance.title')
-                                </span>
-                            </a>
-                        </li>
-                        @endcan
-
-                        @can('search_attendance_access')
-                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                            <a href="{{ route('admin.roles.index') }}">
-                                <i class="fa fa-briefcase"></i>
-                                <span class="title">
-                                    @lang('quickadmin.searchattendance.title')
-                                </span>
-                            </a>
-                        </li>
-                        @endcan
-
-                        @can('list_attendance_access')
-                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                            <a href="{{ route('admin.roles.index') }}">
-                                <i class="fa fa-briefcase"></i>
-                                <span class="title">
-                                    @lang('quickadmin.listattendance.title')
-                                </span>
-                            </a>
-                        </li>
-                        @endcan
-                    </li>
-                    @endcan -->
-
-                <!-- @can('employee_access')
-                    <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                        <a href="{{ route('admin.roles.index') }}">
-                            <i class="fa fa-briefcase"></i>
-                            <span class="title">
-                                @lang('quickadmin.employees.title')
-                            </span>
-                        </a>
-                    </li>
+                    </ul>
+                </li>
                 @endcan
-                @can('role_access')
+                
+                
+                @can('employee_access')
                 <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                        <a href="{{ route('admin.roles.index') }}">
-                            <i class="fa fa-briefcase"></i>
-                            <span class="title">
-                                @lang('quickadmin.tasks.title')
-                            </span>
-                        </a>
-                    </li>
+                    <a href="#">
+                        <i class="fa fa-briefcase"></i>
+                        <span class="title">
+                            @lang('quickadmin.employees.title')
+                        </span>
+                    </a>
+                    
+                    <ul class="treeview-menu">
+                        @can('list_employee_access')
+                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
+                            <a href="{{ route('employee') }}">
+                                <i class="fa fa-briefcase"></i>
+                                <span class="title">
+                                    @lang('quickadmin.listemployees.title')
+                                </span>
+                            </a>
+                        </li>
+                        @endcan
+
+                        @can('add_employee_access')
+                        <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
+                            <a href="{{ route('addemployee') }}">
+                                <i class="fa fa-briefcase"></i>
+                                <span class="title">
+                                    @lang('quickadmin.addemployees.title')
+                                </span>
+                            </a>
+                        </li>
+                        @endcan
+                    </ul>
+                </li>
                 @endcan
-                @can('role_access')
+                
+               
+                @can('tasks_access')
                 <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                        <a href="{{ route('admin.roles.index') }}">
+                    <a href="#">
+                        <i class="fa fa-briefcase"></i>
+                        <span class="title">
+                            @lang('quickadmin.tasks.title')
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                    @can('list_tasks_access')
+                    <li class="{{ $request->segment(2) == 'listtasks' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('task') }}">
                             <i class="fa fa-briefcase"></i>
                             <span class="title">
-                                @lang('quickadmin.owntasks.title')
+                                @lang('quickadmin.listtasks.title')
                             </span>
                         </a>
                     </li>
-                @endcan
-                @can('user_access')
-                <li class="{{ $request->segment(2) == 'users' ? 'active active-sub' : '' }}">
-                        <a href="{{ route('admin.users.index') }}">
-                            <i class="fa fa-user"></i>
+                    @endcan
+
+                    @can('add_tasks_access')
+                    <li class="{{ $request->segment(2) == 'addtasks' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('addtask') }}">
+                            <i class="fa fa-briefcase"></i>
                             <span class="title">
-                                @lang('quickadmin.users.title')
+                                @lang('quickadmin.addtasks.title')
                             </span>
                         </a>
                     </li>
-                @endcan
-                </ul>
-            </li>
-            @endcan -->
+                    @endcan
+
 
         <!-- for OFFICE-MANAGEMENT-->
             @can('office_management_access')
@@ -422,26 +390,32 @@
                             @lang('quickadmin.addtasks.title')
                         </span>
                     </a>
+
                 </li>
                 @endcan
+
+                
                 @can('own_tasks_access')
-                <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
+                <li class="{{ $request->segment(2) == 'owntasks' ? 'active active-sub' : '' }}">
                     <a href="#">
                         <i class="fa fa-briefcase"></i>
                         <span class="title">
                             @lang('quickadmin.owntasks.title')
                         </span>
                     </a>
-                </li>
-                @endcan
-                @can('my_tasks_access')
-                <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
-                    <a href="#">
-                        <i class="fa fa-briefcase"></i>
-                        <span class="title">
-                            @lang('quickadmin.mytasks.title')
-                        </span>
-                    </a>
+                    <ul class="treeview-menu">
+                    
+                    @can('my_tasks_access')
+                    <li class="{{ $request->segment(2) == 'mytasks' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('mytask') }}">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="title">
+                                @lang('quickadmin.mytasks.title')
+                            </span>
+                        </a>
+                    </li>
+                    @endcan
+                    </ul>
                 </li>
                 @endcan
                 </ul>

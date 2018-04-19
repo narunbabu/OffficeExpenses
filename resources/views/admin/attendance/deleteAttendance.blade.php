@@ -32,12 +32,12 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <form class="m-t" method="post" action="{{ url('/admin/trytodeleteemployee') }}">
+                    <form class="m-t" method="post" action="{{ route('trytodeleteattendance') }}">
                         <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">
                         <div class="form-horizontal">
                             <input type="hidden" value="{{ $data->id}}" id="id" name="id">
                             <div class="form-group">
-                                <input type="submit" class="btn btn-danger block full-width m-b" value="Delete"/>.
+                                <input type="submit" class="btn btn-danger block full-width m-b" value="Delete"/>
                             </div>
                         </div>
                     </form>
