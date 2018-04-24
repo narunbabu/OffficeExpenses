@@ -10,9 +10,7 @@ use DB;
 class AttendanceController extends Controller
 {
     public function index(Request $request){
-        // if (! Gate::allows('today_attendance_access')) {
-        //     return abort(401);
-        // }
+        
         date_default_timezone_set('Asia/Dhaka');
         $date = date('Y-m-d', time());
 
@@ -66,7 +64,7 @@ class AttendanceController extends Controller
         $month = $request->input('month');
         $m="%%%%-".$month."-%%";
 
-        $result = DB::select('SELECT * FROM `attendance` WHERE `date` LIKE ?', [$m]);
+        $result = DB::select('SELECT * FROM `attendances` WHERE `date` LIKE ?', [$m]);
             return view('admin.attendance.results', ['result' => $result]);
         
 
@@ -87,7 +85,7 @@ class AttendanceController extends Controller
         $year = $request->input('year');
         $y=$year."-%%-%%";
             
-        $result = DB::select('SELECT * FROM `attendance` WHERE `date` LIKE ?', [$y]);
+        $result = DB::select('SELECT * FROM `attendances` WHERE `date` LIKE ?', [$y]);
             return view('admin.attendance.results', ['result' => $result]);
         
         // if($request->session()->has('currentUser')){
@@ -105,7 +103,7 @@ class AttendanceController extends Controller
     public function searchByUsername(Request $request){
         
         $username = $request->input('username');
-            $result = DB::table('attendance')->where('username', $username)->get();
+            $result = DB::table('attendances')->where('username', $username)->get();
             return view('admin.attendance.results', ['result' => $result]);
         
         // if($request->session()->has('currentUser')){
@@ -184,6 +182,7 @@ class AttendanceController extends Controller
 
         date_default_timezone_set('Asia/Dhaka');
         $currentDate = date('Y-m-d H:i:s', time());
+        // $currentTime = time('H:i:s');
 
         $data = array('date' => $date, 
                     'username' => $username, 

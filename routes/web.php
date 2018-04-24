@@ -63,7 +63,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function (){
     Route::post('trytoaddattendance','AttendanceController@create')->name('trytoaddattendance');
     Route::post('trytoupdateattendance','AttendanceController@update')->name('trytoupdateattendance');
     Route::post('trytodeleteattendance','AttendanceController@delete')->name('trytodeleteattendance');
-    Route::post('attendance/byDate','AttendanceController@searchByDate');
+    Route::post('attendance/byDate','AttendanceController@searchByDate')->name('byDate');
     Route::post('attendance/byMonth','AttendanceController@searchByMonth');
     Route::post('attendance/byYear','AttendanceController@searchByYear');
     Route::post('attendance/byUsername','AttendanceController@searchByUsername');
@@ -77,13 +77,23 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function (){
     Route::post('trytoaddemployee','EmployeesController@create');
     Route::post('trytoupdateemployee',array('uses'=>'EmployeesController@update'));
     Route::post('trytodeleteemployee',array('uses'=>'EmployeesController@delete'));
-    Route::post('trytoaddtask','TasksController@create')->name('trytoaddtask');
+    // Route::post('trytoaddtask','TasksController@create')->name('trytoaddtask');
 
 
 //for TASKS routes
     Route::get('tasks','TasksController@index')->name('task');
     Route::get('addtask','TasksController@addTask')->name('addtask');
     Route::get('mytasks','TasksController@adminTasks')->name('mytask');
+    
+    Route::get('task/details/{id}','TasksController@getTask');
+    Route::get('task/edit/{id}','TasksController@editTask');
+    Route::get('task/delete/{id}','TasksController@deleteTask');
+
+    Route::post('trytoaddtask','TasksController@create')->name('trytoaddtask');
+    Route::post('trytoupdatetask',array('uses'=>'TasksController@update'))->name('trytoupdatetask');
+    Route::post('trytoupdatemytask',array('uses'=>'TasksController@update'));
+    Route::post('trytodeletetask',array('uses'=>'TasksController@delete'))->name('trytodeletetask');
+
 });
 
 
