@@ -32,7 +32,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <form class="m-t" method="post" action="{{ url('/admin/trytodeletetask') }}">
+                        <form class="m-t" method="post" action="{{ route('trytodeletetask') }}">
                             <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">
                             <div class="form-horizontal">
                                 <input type="hidden" value="{{ $data->id}}" id="id" name="id">

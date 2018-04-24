@@ -4,7 +4,7 @@
 @section('content')
     <h2>Update Task</h2>
     <hr />
-        <form class="m-t" method="post" action="{{ url('/admin/trytoupdatetask') }}" enctype="multipart/form-data">
+        <form class="m-t" method="post" action="{{ route('trytoupdatetask') }}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-horizontal">
 					<input type="hidden" value="{{ $data->id}}" id="id" name="id">
