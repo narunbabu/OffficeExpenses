@@ -1,11 +1,11 @@
 @inject('request', 'Illuminate\Http\Request')
 <!-- Left side column. contains the sidebar -->
+
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <ul class="sidebar-menu">
 
-             
 
             <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
                 <a href="{{ url('/') }}">
@@ -140,22 +140,21 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                
                     @can('attendance_access')
-                    <li class="treeview">      
-                        <li class="{{ $request->segment(2) == 'attendance' ? 'active active-sub' : '' }}">
+                        <li class="treeview {{ $request->segment(2) == 'attendance'
+                        | $request->segment(2) == 'addAttendance' |$request->segment(2) == 'attendances' 
+                        ? 'active active-sub' : '' }}">
                             <a href="#">
-                                <i class="fa fa-calendar"></i>
-                                <span class="title">@lang('quickadmin.attendance.title')</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
+                                    <i class="fa fa-calendar"></i>
+                                    <span class="title">@lang('quickadmin.attendance.title')</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
 
-                            <ul class="treeview-menu">
-                                
+                            <ul class="treeview-menu"> 
                                 @can('today_attendance_access')
-                                <li class="{{ $request->segment(2) == 'todayattendance' ? 'active active-sub' : '' }}">
+                                <li class="{{ $request->segment(2) == 'attendance' ? 'active active-sub' : '' }}">
                                     <a href="{{ route('attendance') }}">
                                         <i class="fa fa-calendar-check-o"></i>
                                         <span class="title">
@@ -165,16 +164,19 @@
                                 </li>
                                 @endcan
 
-                            {{--@can('add_attendance_access')--}}
-                                <li class="{{ $request->segment(2) == 'addattendance' ? 'active active-sub' : '' }}">
-                                    <a href="{{ route('addAttendance') }}">
-                                        <i class="fa fa-calendar-check-o"></i>
-                                        <span class="title">
-                                            @lang('quickadmin.addattendance.title')
-                                        </span>
-                                    </a>
-                                </li>
-                            {{--@endcan--}}
+                                @can('add_attendance_access')
+                                    <li class="{{ $request->segment(2) == 'addAttendance' ? 'active active-sub' : '' }}">
+  
+                                        <a href="{{ route('addAttendance') }}">
+                                            <i class="fa fa-calendar-check-o"></i>
+                                            <span class="title">
+                                                @lang('quickadmin.addattendance.title')
+                                            </span>
+   
+                                        </a>
+                                        
+                                    </li>
+                                @endcan
 
                                 @can('search_attendance_access')
                                 <li class="{{ $request->segment(2) == 'searchattendance' ? 'active active-sub' : '' }}">
@@ -188,7 +190,7 @@
                                 @endcan
 
                                 @can('list_attendance_access')
-                                <li class="{{ $request->segment(2) == 'listattendance' ? 'active active-sub' : '' }}">
+                                <li class="{{ $request->segment(2) == 'attendances' ? 'active active-sub' : '' }}">
                                     <a href="{{ route('attendances') }}">
                                         <i class="fa fa-calendar"></i>
                                         <span class="title">
@@ -204,7 +206,8 @@
                 
                 
                     @can('employee_access')
-                    <li class="{{ $request->segment(2) == 'empolyee' ? 'active active-sub' : '' }}">
+                    <li class="{{ $request->segment(2) == 'employees' | $request->segment(2) == 'addemployee'
+                    ? 'active active-sub' : '' }}">
                         <a href="#">
                             <i class="fa fa-user"></i>
                             <span class="title">@lang('quickadmin.employees.title')</span>
@@ -215,7 +218,7 @@
                     
                         <ul class="treeview-menu">
                             @can('list_employee_access')
-                            <li class="{{ $request->segment(2) == 'listemployee' ? 'active active-sub' : '' }}">
+                            <li class="{{ $request->segment(2) == 'employees' ? 'active active-sub' : '' }}">
                                 <a href="{{ route('employee') }}">
                                     <i class="fa fa-user"></i>
                                     <span class="title">
@@ -241,7 +244,8 @@
                 
                
                     @can('tasks_access')
-                    <li class="{{ $request->segment(2) == 'tasks' ? 'active active-sub' : '' }}">
+                    <li class="{{ $request->segment(2) == 'tasks' | $request->segment(2) == 'addtask'
+                    ? 'active active-sub' : '' }}">
                         <a href="#">
                             <i class="fa fa-file"></i>
                             <span class="title">@lang('quickadmin.tasks.title')</span>
@@ -252,7 +256,7 @@
                         <ul class="treeview-menu">
 
                             @can('list_tasks_access')
-                            <li class="{{ $request->segment(2) == 'listtasks' ? 'active active-sub' : '' }}">
+                            <li class="{{ $request->segment(2) == 'tasks' ? 'active' : '' }}">
                                 <a href="{{ route('task') }}">
                                     <i class="fa fa-file"></i>
                                     <span class="title">
@@ -263,7 +267,7 @@
                             @endcan
 
                             @can('add_tasks_access')
-                            <li class="{{ $request->segment(2) == 'addtasks' ? 'active active-sub' : '' }}">
+                            <li class="{{ $request->segment(2) == 'addtask' ? 'active' : '' }}">
                                 <a href="{{ route('addtask') }}">
                                     <i class="fa fa-file"></i>
                                     <span class="title">
@@ -278,7 +282,7 @@
 
                 
                     @can('own_tasks_access')
-                    <li class="{{ $request->segment(2) == 'owntasks' ? 'active active-sub' : '' }}">
+                    <li class="{{ $request->segment(2) == 'mytasks' ? 'active active-sub' : '' }}">
                         <a href="#">
                             <i class="fa fa-file"></i>
                             <span class="title">@lang('quickadmin.owntasks.title')</span>

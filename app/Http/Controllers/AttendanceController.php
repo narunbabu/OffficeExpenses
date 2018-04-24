@@ -145,6 +145,7 @@ class AttendanceController extends Controller
     }
 
     public function addAttendance(Request $request){
+        // return $request;
         
          return view('admin.attendance.addAttendance');
 
