@@ -3,7 +3,7 @@
 return [
 	
 	'user-management' => [
-		'title' => 'User management5',
+		'title' => 'User management',
 		'fields' => [
 		],
 	],
@@ -108,7 +108,10 @@ return [
 	'addattendance' => [
 		'title' => 'Add Attendance',
 		'fields' => [
-			'title' => 'Title',
+			'username' => 'Username',
+			'intime' => 'In Time',
+			'outtime' => 'Out Time',
+			'present' => 'Present',
 		],
 	],
 

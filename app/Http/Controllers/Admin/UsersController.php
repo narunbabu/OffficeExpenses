@@ -24,6 +24,7 @@ class UsersController extends Controller
 
 
                 $users = User::all();
+                // return $users;
 
         return view('admin.users.index', compact('users'));
     }
