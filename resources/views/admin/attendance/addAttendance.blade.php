@@ -8,34 +8,34 @@
             <div class="form-horizontal">
                 <div class="form-group">
                     <div class="col-md-10" align="left"><label>Date</label></div>
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         <input class="form-control" type="text" id="date" name="date" required="">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-10" align="left"><label>Username</label></div>
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         <input class="form-control" type="text" id="username" name="username" required="">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-10" align="left"><label>Attendance</label></div>
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         <select class="form-control" id="attendance" name="attendance" >
-                            <option>0</option>
-                            <option>1</option>
+                            <option value='0'>obsent</option>
+                            <option value='1'>present</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-10" align="left"><label>In Time</label></div>
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         <input class="form-control" type="text" id="in" name="in" placeholder="In Time">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-10" align="left"><label>Out Time</label></div>
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         <input class="form-control" type="text" id="out" name="out" placeholder="Out Time"></input>
                     </div>
                 </div>

@@ -19,7 +19,8 @@
             <span class="icon-bar"></span>
         </a>
 
-        
+      {{-- {{ $request->segment(2) }}--}}
+     {{-- {{ count($users) > 0 ? 'datatable' : '' }}--}}
 
     </nav>
 </header>

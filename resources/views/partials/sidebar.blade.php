@@ -142,7 +142,7 @@
                 <ul class="treeview-menu">
                     @can('attendance_access')
                         <li class="treeview {{ $request->segment(2) == 'attendance'
-                        | $request->segment(2) == 'addAttendance' |$request->segment(2) == 'attendances' 
+                        | $request->segment(2) == 'addAttendance' | $request->segment(2) == 'search' | $request->segment(2) == 'attendances' 
                         ? 'active active-sub' : '' }}">
                             <a href="#">
                                     <i class="fa fa-calendar"></i>
@@ -179,7 +179,7 @@
                                 @endcan
 
                                 @can('search_attendance_access')
-                                <li class="{{ $request->segment(2) == 'searchattendance' ? 'active active-sub' : '' }}">
+                                <li class="{{ $request->segment(2) == 'search' ? 'active active-sub' : '' }}">
                                     <a href="{{ route('search') }}">
                                         <i class="fa fa-calendar"></i>
                                         <span class="title">
