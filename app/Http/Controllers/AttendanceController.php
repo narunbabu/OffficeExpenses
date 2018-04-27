@@ -252,23 +252,25 @@ class AttendanceController extends Controller
 
     public function store(Request $request){
         
-        $users = $request->name;
-        return $users;
+        $users = $request;
+        // return $users;
         // $users = implode(' ',$users);
         // $request->name=$users[0];
         // return $users;
-        for($i=0;$i<=count($users);$i++)
+        for($i=0;$i<count($request->name);$i++)
         {
             $record = [
                 'date' => $request->date,
-                'username' => $request->name,
-                'in' => $request->in,
-                'out' => $request->out,
+                'username' => $request->name[$i],
+                'in' => $request->in[$i],
+                'out' => $request->out[$i],
                 'attendance' => $request->attendance,
             ];
             attendance::create($record);
+                // echo($request->name[0]);
+
             // attendance::create($request->all());
-            return $record;
+            // return $record;
         }
         // if(DB::table('attendances')->insert($record)){
         //     return redirect('/admin/attendance');

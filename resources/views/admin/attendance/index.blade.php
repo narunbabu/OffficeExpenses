@@ -53,7 +53,7 @@
             <div class="form-group">
                 <div class="col-md-10" align="left"><label>Date</label></div>
                 <div class="col-md-5">
-                    <input class="form-control" type="text" id="date" name="date" required="">
+                    <input class="form-control" type="text" id="date" value="{{date('Y-m-d')}}" name="date"  required="">
                 </div>
             </div><br><hr>
             <table class="table table-bordered table-striped">
@@ -73,15 +73,18 @@
                             <td><input class="checkbox" type="checkbox" id="" name="name[]" value="{{ $user }}"></td>
                             <td>{{ $user }}
                             </td>
-                            <td>9:00</td>
-                            <td>6:00</td>
+                            <td>
+                            <input class="form-control" type="text" id="in" value="9:00" name="in[]"  required="">
+                             {{--  {!! Form::text('in','9:00',array('class' => 'form-control')) !!}  --}}
+                             </td>
+                            <td><input class="form-control" type="text" id="out" value="6:00" name="out[]"  required=""></td>
                             <!-- <td><input type="checkbox" id="select-all" name="name" value="{{ $user }}"></td> -->
                         </tr>
                     @endforeach
                 </tbody>
             </table>
             
-            <div class="col-xs-12 col-sm-12 col-md-12" style="display:none">
+            {{--  <div class="col-xs-12 col-sm-12 col-md-12" style="display:none">
                 <div class="form-group">
                     <strong>Intime</strong>
                         {!! Form::text('in','9:00',array('class' => 'form-control')) !!}
@@ -93,7 +96,7 @@
                     <strong>Outtime</strong>
                         {!! Form::text('out','6:00',array('class' => 'form-control')) !!}
                 </div>
-            </div>
+            </div>  --}}
 
             <div class="col-xs-12 col-sm-12 col-md-12" style="display:none">
                 <div class="form-group">
