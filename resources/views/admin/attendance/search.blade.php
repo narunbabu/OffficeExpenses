@@ -9,7 +9,7 @@
             <div class="form-horizontal">
                 <div class="form-group">
                     <div class="col-md-10" align="left"><label>Date</label></div>
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         <input class="form-control" type="text" id="date" name="date" required="">
                     </div>
                 </div>
@@ -20,13 +20,13 @@
                 </div>
             </div>
         </form>
-        <br><hr><br>
+        <br>
         <form class="m-t" method="post" action="{{ url('/admin/attendance/byMonth') }}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-horizontal">
                 <div class="form-group">
                     <div class="col-md-10" align="left"><label>Month</label></div>
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         <select class="form-control" id="month" name="month" >
                             <option>01</option>
                             <option>02</option>
@@ -50,13 +50,13 @@
                 </div>
             </div>
         </form>
-        <br><hr><br>
+        <br>
         <form class="m-t" method="post" action="{{ url('/admin/attendance/byYear') }}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-horizontal">
                 <div class="form-group">
                     <div class="col-md-10" align="left"><label>Year</label></div>
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         <input class="form-control" type="number" id="year" name="year" min="2018" required="">
                     </div>
                 </div>
@@ -67,13 +67,13 @@
                 </div>
             </div>
         </form>
-        <br><hr><br>
+        <br>
         <form class="m-t" method="post" action="{{ url('/admin/attendance/byUsername') }}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-horizontal">
                 <div class="form-group">
                     <div class="col-md-10" align="left"><label>Username</label></div>
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         <input class="form-control" type="text" id="username" name="username" required="">
                     </div>
                 </div>
