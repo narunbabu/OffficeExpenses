@@ -140,8 +140,9 @@ class AttendanceController extends Controller
 
     public function addAttendance(Request $request){
         // return $request;
+        $users = DB::table('users')->pluck('name');
 
-         return view('admin.attendance.addAttendance');
+         return view('admin.attendance.addAttendance',compact('users'));
 
         // return $request;
         
@@ -203,17 +204,7 @@ class AttendanceController extends Controller
         DB::table('attendances')->where('id', '=', $id)->delete();
 
         return redirect('/admin/attendance');
-        
-        // if($request->session()->has('currentUser')){
-        //     $id = $request->input('id');
 
-        //     DB::table('attendance')->where('id', '=', $id)->delete();
-
-        //     return redirect('/admin/attendance');
-        // }
-        // else{
-        //     return view('errors/unauthorized');
-        // }
     }
 
     public function update(Request $request){
@@ -252,33 +243,39 @@ class AttendanceController extends Controller
 
     public function store(Request $request){
         
-        $users = $request;
-        // return $users;
-        // $users = implode(' ',$users);
-        // $request->name=$users[0];
-        // return $users;
-        for($i=0;$i<count($request->name);$i++)
-        {
-            $record = [
-                'date' => $request->date,
-                'username' => $request->name[$i],
-                'in' => $request->in[$i],
-                'out' => $request->out[$i],
-                'attendance' => $request->attendance,
-            ];
-            attendance::create($record);
+        $addattendance = DB::table('attendances')->where('date','=', $request->date)->where('username','=', $request->name)->count();
+            // return $attendances;
+        if($addattendance==0){
+
+            $users = $request;
+            for($i=0;$i<count($request->name);$i++)
+            {
+                $record = [
+                    'date' => $request->date,
+                    'username' => $request->name[$i],
+                    'in' => $request->in[$i],
+                    'out' => $request->out[$i],
+                    'attendance' => $request->attendance,
+                ];
+                attendance::create($record);
+
                 // echo($request->name[0]);
 
-            // attendance::create($request->all());
-            // return $record;
+                // attendance::create($request->all());
+                // return $record;
+            }
+            return redirect('/admin/attendance');
         }
+           
+        else{
         // if(DB::table('attendances')->insert($record)){
         //     return redirect('/admin/attendance');
         // }
         // else{
         //     var_dump(DB::table('attendances')->insert($record));
         // }
-        return redirect('/admin/attendance');
+        return redirect('/admin/attendance')->with('message','Attendance alredy taken.');
+        }
         
     }
 }

@@ -112,6 +112,7 @@ return [
 			'intime' => 'In Time',
 			'outtime' => 'Out Time',
 			'present' => 'Present',
+			'date'	=> 'Date',
 		],
 	],
 

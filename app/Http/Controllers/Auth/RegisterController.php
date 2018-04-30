@@ -29,7 +29,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/home';
+    // protected $redirectTo = '/admin/home';
+    protected $redirectTo = '/admin/attendance';
     
 
     /**
