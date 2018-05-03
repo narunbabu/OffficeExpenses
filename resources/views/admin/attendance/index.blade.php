@@ -71,8 +71,10 @@
                 <!-- <h4 style="color:#336699"><input type="checkbox" id="select_all"/> Check all</h4> -->
                     @foreach ($users as $user)
                         <tr>
-                            <td><input class="" type="text" id="date" value="{{date('Y-m-d')}}" name="date"  required=""></td>
+                            <td>
+                            <input class="form-control " id="date[]" type="text" name="date[]" value="{{date('Y-m-d')}}"   required=""></td>
                             <!-- <td><input class="checkbox" type="checkbox" id="" name="name[]" value="{{ $user }}"></td> -->
+                            {{--  {{\Carbon\Carbon::createFromFormat('m/d/Y', '12/04/2018')}}  --}}
                             <td>{{ $user }}
                             </td>
                             <td>
@@ -85,7 +87,13 @@
                     @endforeach
                 </tbody>
             </table>
-            
+            {{--  <script>
+    jQuery(document).ready(function($) {
+        $('.datepicker').datepicker({
+            dateFormat: "yy-mm-dd"
+        });
+    });
+</script>  --}}
             {{--  <div class="col-xs-12 col-sm-12 col-md-12" style="display:none">
                 <div class="form-group">
                     <strong>Intime</strong>
