@@ -17,11 +17,12 @@ class AttendanceController extends Controller
         $date = date('Y-m-d', time());
 
         $attendances = DB::table('attendances')->where('date', $date)->get();
+            // return $attendances;
             // return view('admin.attendance.index', ['attendances' => $attendance]);
         $users = DB::table('users')->pluck('name');
         // $users = User::all();
         // return $users;
-            return view('admin.attendance.index',compact('attendances','users','date'));
+            return view('admin.attendance.index',compact('attendances','users'));
 
         // return $request;
         // date_default_timezone_set('Asia/Dhaka');
@@ -242,12 +243,15 @@ class AttendanceController extends Controller
     }
 
     public function store(Request $request){
+
+        // return $request;
         
         $addattendance = DB::table('attendances')->where('date','=', $request->date)->where('username','=', $request->name)->count();
-            // return $attendances;
+            // return $addattendance;
         if($addattendance==0){
 
             $users = $request;
+            // return $users;
             for($i=0;$i<count($request->name);$i++)
             {
                 $record = [
