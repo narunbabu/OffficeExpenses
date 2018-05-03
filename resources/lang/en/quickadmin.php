@@ -23,6 +23,9 @@ return [
 			'password' => 'Password',
 			'role' => 'Role',
 			'remember-token' => 'Remember token',
+			'username'	=>	'Username',
+			'position'	=>	'Position',
+			'admin'	=>	'Admin',
 		],
 	],
 	
