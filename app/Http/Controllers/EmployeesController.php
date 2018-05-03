@@ -9,6 +9,7 @@ class EmployeesController extends Controller
 {
     public function index(Request $request){
 
+    //  return
         $employees = DB::table('users')->get();
             return view('admin.employees.index', ['employees' => $employees]);
             
