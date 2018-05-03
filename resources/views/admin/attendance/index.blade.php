@@ -71,12 +71,8 @@
                 <!-- <h4 style="color:#336699"><input type="checkbox" id="select_all"/> Check all</h4> -->
                     @foreach ($users as $user)
                         <tr>
-                            <td>
-                            <input class="form-control " id="date[]" type="text" name="date[]" value="{{date('Y-m-d')}}"   required=""></td>
-                            <!-- <td><input class="checkbox" type="checkbox" id="" name="name[]" value="{{ $user }}"></td> -->
-                            {{--  {{\Carbon\Carbon::createFromFormat('m/d/Y', '12/04/2018')}}  --}}
-                            <td>{{ $user }}
-                            </td>
+                            <td><input class="" type="date" id="" value="{{ date('Y-m-d') }}" name="date" required=""></td>
+                            <td>{{ $user }}</td>
                             <td>
                             <input class="" type="text" id="in" value="9:00 AM" name="in[]"  required="">
                              {{--  {!! Form::text('in','9:00',array('class' => 'form-control')) !!}  --}}

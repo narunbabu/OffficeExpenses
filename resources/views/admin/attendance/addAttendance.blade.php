@@ -71,7 +71,7 @@
                 <!-- <h4 style="color:#336699"><input type="checkbox" id="select_all"/> Check all</h4> -->
                     @foreach ($users as $user)
                         <tr>
-                            <td><input class="form-control" type="text" id="date" value="{{date('Y-m-d')}}" name="date"  required=""></td>
+                            <td><input class="" type="date" id="" value="{{date('Y-m-d')}}" name="date"  required=""></td>
                             <!-- <td><input class="checkbox" type="checkbox" id="" name="name[]" value="{{ $user }}"></td> -->
                             <td>{{ $user }}
                             </td>

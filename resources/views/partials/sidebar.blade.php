@@ -113,7 +113,7 @@
                             </li>
                             @endcan
 
-                            @can('add_employee_access')
+                            {{--@can('add_employee_access')
                             <li class="{{ $request->segment(2) == 'addemployee' ? 'active active-sub' : '' }}">
                                 <a href="{{ route('addemployee') }}">
                                     <i class="fa fa-user"></i>
@@ -122,7 +122,7 @@
                                     </span>
                                 </a>
                             </li>
-                            @endcan
+                            @endcan--}}
                         </ul>
                     </li>
                     @endcan
@@ -224,6 +224,28 @@
                             @lang('quickadmin.users.title')
                         </span>
                     </a>
+                    {{--<ul class="treeview-menu">
+                        @can('list_employee_access')
+                        <li class="{{ $request->segment(2) == 'employees' ? 'active active-sub' : '' }}">
+                            <a href="{{ route('employee') }}">
+                                <i class="fa fa-user"></i>
+                                <span class="title">
+                                    @lang('quickadmin.listemployees.title')
+                                </span>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('add_employee_access')
+                        <li class="{{ $request->segment(2) == 'addemployee' ? 'active active-sub' : '' }}">
+                            <a href="{{ route('addemployee') }}">
+                                <i class="fa fa-user"></i>
+                                <span class="title">
+                                    @lang('quickadmin.addemployees.title')
+                                </span>
+                            </a>
+                        </li>
+                        @endcan
+                    </ul>--}}
                 </li>
                 @endcan
                 </ul>

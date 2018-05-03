@@ -58,6 +58,42 @@
                     @endif
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('username', trans('quickadmin.users.fields.username').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('username', old('username'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('username'))
+                        <p class="help-block">
+                            {{ $errors->first('username') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('position', trans('quickadmin.users.fields.position').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('position', old('position'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('position'))
+                        <p class="help-block">
+                            {{ $errors->first('position') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('admin', trans('quickadmin.users.fields.admin').'*', ['class' => 'control-label']) !!}
+                    {!! Form::select('admin', ['true' =>'true','false' =>'false'], old('admin'), ['class' => 'form-control', 'required' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('admin'))
+                        <p class="help-block">
+                            {{ $errors->first('admin') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
             
         </div>
     </div>

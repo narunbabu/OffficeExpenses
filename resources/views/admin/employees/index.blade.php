@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>employee</h2>
+    <h2>Employee</h2>
         <center>
             <table class="table table-hover table-bordered">
                 <tr>
