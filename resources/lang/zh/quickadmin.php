@@ -286,5 +286,5 @@ return [
 	'qa_calendar_sources' => '日曆來源',
 	'qa_new_calendar_source' => '新增日曆來源',
 	'qa_create_new_calendar_source' => '新增日曆來源',
-	'quickadmin_title' => 'Laravel Expense Manager',
+	'quickadmin_title' => 'Ameyem Expense Manager',
 ];

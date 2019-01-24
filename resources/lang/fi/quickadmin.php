@@ -186,5 +186,5 @@ return [
 	'qa_photo2' => 'Kuva 2',
 	'qa_photo3' => 'Kuva 3',
 	'qa_calendar' => 'Kalenteri',
-	'quickadmin_title' => 'Laravel Expense Manager',
+	'quickadmin_title' => 'Ameyem Expense Manager',
 ];

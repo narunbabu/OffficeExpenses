@@ -243,5 +243,5 @@ return [
 	'qa_if_you_are_having_trouble' => 'Калі ў вас узніклі праблемы, націснуўшы на',
 	'qa_copy_paste_url_bellow' => 'кнопку, скапіруйце і ўстаўце URL ніжэй у ваш вэб-браўзэр:',
 	'qa_not_approved_title' => 'Ваш акаўнт не падцверджаны',
-	'quickadmin_title' => 'Laravel Expense Manager',
+	'quickadmin_title' => 'Ameyem Expense Manager',
 ];

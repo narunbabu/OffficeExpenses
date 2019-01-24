@@ -1,16 +1,88 @@
 <?php
 
 return [
-		'user-management' => [		'title' => 'User management',		'fields' => [		],	],
-		'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',		],	],
-		'users' => [		'title' => 'Users',		'fields' => [			'name' => 'Name',			'email' => 'Email',			'password' => 'Password',			'role' => 'Role',			'remember-token' => 'Remember token',		],	],
-		'expense-management' => [		'title' => 'Expense Management',		'fields' => [		],	],
-		'expense-category' => [		'title' => 'Expense Categories',		'fields' => [			'name' => 'Name',			'created-by' => 'Created by',		],	],
-		'income-category' => [		'title' => 'Income categories',		'fields' => [			'name' => 'Name',			'created-by' => 'Created by',		],	],
-		'income' => [		'title' => 'Income',		'fields' => [			'income-category' => 'Income Category',			'entry-date' => 'Entry date',			'amount' => 'Amount',			'created-by' => 'Created by',		],	],
-		'expense' => [		'title' => 'Expenses',		'fields' => [			'expense-category' => 'Expense Category',			'entry-date' => 'Entry date',			'amount' => 'Amount',			'created-by' => 'Created by',		],	],
-		'monthly-report' => [		'title' => 'Monthly report',		'fields' => [		],	],
-		'currency' => [		'title' => 'Currency',		'fields' => [			'title' => 'Title',			'symbol' => 'Symbol',			'money-format' => 'Money format',			'created-by' => 'Created by',		],	],
+	
+	'user-management' => [
+		'title' => 'User management',
+		'fields' => [
+		],
+	],
+	
+	'roles' => [
+		'title' => 'Roles',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+	
+	'users' => [
+		'title' => 'Users',
+		'fields' => [
+			'name' => 'Name',
+			'email' => 'Email',
+			'password' => 'Password',
+			'role' => 'Role',
+			'remember-token' => 'Remember token',
+		],
+	],
+	
+	'expense-management' => [
+		'title' => 'Expense Management',
+		'fields' => [
+		],
+	],
+	
+	'expense-category' => [
+		'title' => 'Expense Categories',
+		'fields' => [
+			'name' => 'Name',
+			'created-by' => 'Created by',
+		],
+	],
+	
+	'income-category' => [
+		'title' => 'Income categories',
+		'fields' => [
+			'name' => 'Name',
+			'created-by' => 'Created by',
+		],
+	],
+	
+	'income' => [
+		'title' => 'Income',
+		'fields' => [
+			'income-category' => 'Income Category',
+			'entry-date' => 'Entry date',
+			'amount' => 'Amount',
+			'created-by' => 'Created by',
+		],
+	],
+	
+	'expense' => [
+		'title' => 'Expenses',
+		'fields' => [
+			'expense-category' => 'Expense Category',
+			'entry-date' => 'Entry date',
+			'amount' => 'Amount',
+			'created-by' => 'Created by',
+		],
+	],
+	
+	'monthly-report' => [
+		'title' => 'Monthly report',
+		'fields' => [
+		],
+	],
+	
+	'currency' => [
+		'title' => 'Currency',
+		'fields' => [
+			'title' => 'Title',
+			'symbol' => 'Symbol',
+			'money-format' => 'Money format',
+			'created-by' => 'Created by',
+		],
+	],
 	'qa_file_contains_header_row' => 'Inneholder fila overskrift rad?',
 	'qa_csvImport' => 'CSV import',
 	'qa_csv_file_to_import' => 'CSV fil til importering',
@@ -174,7 +246,7 @@ return [
 	'qa_you_have_no_messages' => 'Du har ingen meldinger.',
 	'qa_all_messages' => 'Alle meldinger',
 	'qa_new_message' => 'Ny melding',
-	'qa_outbox' => 'Utboks',
+	'qa_outbox' => 'Utboks'Ameyem Expense
 	'qa_inbox' => 'Innboks',
 	'qa_recipient' => 'Mottager',
 	'qa_subject' => 'Emne',

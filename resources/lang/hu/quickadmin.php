@@ -318,5 +318,5 @@ return [
 	'qa_select_users_placeholder' => 'Válasszon ki egy felhasználót',
 	'qa_when_crud' => 'Amikor CRUD',
 	'qa_action_model' => 'Tevékenység model',
-	'quickadmin_title' => 'Laravel Expense Manager',
+	'quickadmin_title' => 'Ameyem Expense Manager',
 ];

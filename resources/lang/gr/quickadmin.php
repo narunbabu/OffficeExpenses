@@ -97,5 +97,5 @@ return [
 	'qa_back_to_list' => 'Επιστροφή στην λίστα',
 	'qa_dashboard' => 'Dashboard',
 	'qa_delete' => 'Διαγραφή',
-	'quickadmin_title' => 'Laravel Expense Manager',
+	'quickadmin_title' => 'Ameyem Expense Manager',
 ];

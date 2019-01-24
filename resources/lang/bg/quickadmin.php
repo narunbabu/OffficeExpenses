@@ -103,5 +103,5 @@ return [
 	'qa_back_to_list' => 'Обратно към списъка',
 	'qa_dashboard' => 'Табло',
 	'qa_delete' => 'Изтрий',
-	'quickadmin_title' => 'Laravel Expense Manager',
+	'quickadmin_title' => 'Ameyem Expense Manager',
 ];

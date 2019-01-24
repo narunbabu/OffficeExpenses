@@ -1,16 +1,88 @@
 <?php
 
 return [
-		'user-management' => [		'title' => 'User management',		'fields' => [		],	],
-		'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',		],	],
-		'users' => [		'title' => 'Users',		'fields' => [			'name' => 'Name',			'email' => 'Email',			'password' => 'Password',			'role' => 'Role',			'remember-token' => 'Remember token',		],	],
-		'expense-management' => [		'title' => 'Expense Management',		'fields' => [		],	],
-		'expense-category' => [		'title' => 'Expense Categories',		'fields' => [			'name' => 'Name',			'created-by' => 'Created by',		],	],
-		'income-category' => [		'title' => 'Income categories',		'fields' => [			'name' => 'Name',			'created-by' => 'Created by',		],	],
-		'income' => [		'title' => 'Income',		'fields' => [			'income-category' => 'Income Category',			'entry-date' => 'Entry date',			'amount' => 'Amount',			'created-by' => 'Created by',		],	],
-		'expense' => [		'title' => 'Expenses',		'fields' => [			'expense-category' => 'Expense Category',			'entry-date' => 'Entry date',			'amount' => 'Amount',			'created-by' => 'Created by',		],	],
-		'monthly-report' => [		'title' => 'Monthly report',		'fields' => [		],	],
-		'currency' => [		'title' => 'Currency',		'fields' => [			'title' => 'Title',			'symbol' => 'Symbol',			'money-format' => 'Money format',			'created-by' => 'Created by',		],	],
+	
+	'user-management' => [
+		'title' => 'User management',
+		'fields' => [
+		],
+	],
+	
+	'roles' => [
+		'title' => 'Roles',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+	
+	'users' => [
+		'title' => 'Users',
+		'fields' => [
+			'name' => 'Name',
+			'email' => 'Email',
+			'password' => 'Password',
+			'role' => 'Role',
+			'remember-token' => 'Remember token',
+		],
+	],
+	
+	'expense-management' => [
+		'title' => 'Expense Management',
+		'fields' => [
+		],
+	],
+	
+	'expense-category' => [
+		'title' => 'Expense Categories',
+		'fields' => [
+			'name' => 'Name',
+			'created-by' => 'Created by',
+		],
+	],
+	
+	'income-category' => [
+		'title' => 'Income categories',
+		'fields' => [
+			'name' => 'Name',
+			'created-by' => 'Created by',
+		],
+	],
+	
+	'income' => [
+		'title' => 'Income',
+		'fields' => [
+			'income-category' => 'Income Category',
+			'entry-date' => 'Entry date',
+			'amount' => 'Amount',
+			'created-by' => 'Created by',
+		],
+	],
+	
+	'expense' => [
+		'title' => 'Expenses',
+		'fields' => [
+			'expense-category' => 'Expense Category',
+			'entry-date' => 'Entry date',
+			'amount' => 'Amount',
+			'created-by' => 'Created by',
+		],
+	],
+	
+	'monthly-report' => [
+		'title' => 'Monthly report',
+		'fields' => [
+		],
+	],
+	
+	'currency' => [
+		'title' => 'Currency',
+		'fields' => [
+			'title' => 'Title',
+			'symbol' => 'Symbol',
+			'money-format' => 'Money format',
+			'created-by' => 'Created by',
+		],
+	],
 	'qa_save' => 'Išsaugoti',
 	'qa_update' => 'Atnaujinti',
 	'qa_list' => 'Sąrašas',
@@ -43,7 +115,7 @@ return [
 	'qa_administrator_can_create_other_users' => 'Administratorius (gali kurti kitus vartotojus)',
 	'qa_title' => 'Pavadinimas',
 	'qa_roles' => 'Rolės',
-	'qa_role' => 'Rolė',
+	'qa_role' => 'Rolė',Ameyem Expense
 	'qa_user_management' => 'Vartotojų valdymas',
 	'qa_users' => 'Vartotojai',
 	'qa_user' => 'Vartotojas',

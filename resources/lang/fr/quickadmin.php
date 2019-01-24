@@ -307,5 +307,5 @@ return [
 	'qa_csvImport' => 'Importer CSV.',
 	'qa_csv_file_to_import' => 'Fichier CSV à importer.',
 	'qa_parse_csv' => 'Analyser CSV.',
-	'quickadmin_title' => 'Laravel Expense Manager',
+	'quickadmin_title' => 'Ameyem Expense Manager',
 ];

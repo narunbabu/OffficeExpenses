@@ -317,5 +317,5 @@ return [
 	'qa_stripe_transactions' => 'Transacciones con Stripe',
 	'qa_email_line1' => 'Estás recibiendo este mensaje porque alguien solicitó restablecer la contraseña de esta cuenta.',
 	'qa_email_line2' => 'Si no solicitado el restablecimiento de tu contraseña no es necesario que hagas nada.',
-	'quickadmin_title' => 'Laravel Expense Manager',
+	'quickadmin_title' => 'Ameyem Expense Manager',
 ];

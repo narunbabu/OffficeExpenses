@@ -318,5 +318,5 @@ return [
 	'qa_parse_csv' => 'Yükle',
 	'qa_import_data' => 'Veriyi İçeri Al',
 	'qa_imported_rows_to_table' => ':rows sütunları :table tablosuna eklenmiştir',
-	'quickadmin_title' => 'Laravel Expense Manager',
+	'quickadmin_title' => 'Ameyem Expense Manager',
 ];

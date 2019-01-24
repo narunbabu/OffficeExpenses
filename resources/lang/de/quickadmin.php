@@ -318,5 +318,5 @@ return [
 	'qa_parse_csv' => 'Lese CSV',
 	'qa_import_data' => 'Daten importieren',
 	'qa_imported_rows_to_table' => ':rows Zeilen in Tabelle :table importiert',
-	'quickadmin_title' => 'Laravel Expense Manager',
+	'quickadmin_title' => 'Ameyem Expense Manager',
 ];
