@@ -25,6 +25,10 @@
                             <td field-key='amount'>{{ $income->income_currency->symbol . ' ' . number_format($income->amount, 2, $income->income_currency->money_format_decimal, $income->income_currency->money_format_thousands) }}</td>
                         </tr>
                         <tr>
+                            <th>@lang('quickadmin.income.fields.amount')</th>
+                            <td field-key='comment'>{{ $income->comment }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('quickadmin.income.fields.created-by')</th>
                             <td field-key='created_by'>{{ $income->created_by->name or '' }}</td>
                         </tr>

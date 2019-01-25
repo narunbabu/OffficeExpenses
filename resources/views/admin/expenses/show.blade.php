@@ -25,6 +25,10 @@
                             <td field-key='amount'>{{ $expense->expense_currency->symbol . ' ' . number_format($expense->amount, 2, $expense->expense_currency->money_format_decimal, $expense->expense_currency->money_format_thousands ) }}</td>
                         </tr>
                         <tr>
+                            <th>@lang('quickadmin.expense.fields.comment')</th>
+                            <td field-key='comment'>{{ $expense->comment }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('quickadmin.expense.fields.created-by')</th>
                             <td field-key='created_by'>{{ $expense->created_by->name or '' }}</td>
                         </tr>

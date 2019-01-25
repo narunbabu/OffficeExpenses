@@ -35,6 +35,7 @@
                         <th>@lang('quickadmin.expense.fields.expense-category')</th>
                         <th>@lang('quickadmin.expense.fields.entry-date')</th>
                         <th>@lang('quickadmin.expense.fields.amount')</th>
+                        <th>@lang('quickadmin.expense.fields.comment')</th>
                         <th>&nbsp;</th>
 
                     </tr>
@@ -51,6 +52,8 @@
                                 <td field-key='expense_category'>{{ $expense->expense_category->name or '' }}</td>
                                 <td field-key='entry_date'>{{ $expense->entry_date }}</td>
                                 <td field-key='amount'>{{ $expense->expense_currency->symbol  . ' ' . number_format($expense->amount, 2, $expense->expense_currency->money_format_decimal, $expense->expense_currency->money_format_thousands) }}</td>
+                                <td field-key='comment'>{{ $expense->comment }}</td>
+                                
                                 <td>
                                     @can('expense_view')
                                     <a href="{{ route('admin.expenses.show',[$expense->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>

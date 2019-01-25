@@ -18,7 +18,7 @@ class Income extends Model
 {
     use FilterByUser;
 
-    protected $fillable = ['entry_date', 'amount', 'income_category_id', 'currency_id', 'created_by_id'];
+    protected $fillable = ['entry_date', 'amount','comment', 'income_category_id', 'currency_id', 'created_by_id'];
     
     
 

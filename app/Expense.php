@@ -18,7 +18,7 @@ class Expense extends Model
 {
     use FilterByUser;
 
-    protected $fillable = ['entry_date', 'amount', 'currency_id', 'expense_category_id',  'created_by_id'];
+    protected $fillable = ['entry_date', 'amount', 'comment','currency_id', 'expense_category_id',  'created_by_id'];
     
     
 

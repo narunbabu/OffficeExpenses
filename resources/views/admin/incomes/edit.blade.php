@@ -47,6 +47,19 @@
                     @endif
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('amount', trans('quickadmin.income.fields.comment').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('comment', old('comment'), ['class' => 'form-control',  'placeholder' => '', 'required' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('comment'))
+                        <p class="help-block">
+                            {{ $errors->first('comment') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
             
         </div>
     </div>

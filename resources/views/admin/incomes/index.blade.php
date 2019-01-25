@@ -51,6 +51,7 @@
                                 <td field-key='income_category'>{{ $income->income_category->name or '' }}</td>
                                 <td field-key='entry_date'>{{ $income->entry_date }}</td>
                                 <td field-key='amount'>{{ $income->income_currency->symbol . ' ' . number_format($income->amount, 2, $income->income_currency->money_format_decimal, $income->income_currency->money_format_thousands) }}</td>
+                                <td field-key='amount'>{{ $income->comment }}</td>
                                 <td>
                                     @can('income_view')
                                     <a href="{{ route('admin.incomes.show',[$income->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
