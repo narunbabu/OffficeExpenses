@@ -111,7 +111,7 @@ class AttendanceController extends Controller
         // }
     }
 
-    public function getAttendance(Request $request, $id){
+    public function show(Request $request, $id){
         
         $data = DB::table('attendances')->where('id', $id)->first();
             return view('admin.attendance.detailsAttendance', ['data' => $data]);

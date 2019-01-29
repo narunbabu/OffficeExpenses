@@ -28,16 +28,12 @@
                             {{ $attendance->out }}
                         </td>
                         <td>
-                            <a href="/admin/attendance/details/{{ $attendance->id }}">Details</a> |
-                            
+                            {{--  <a href="/admin/attendance/details/{{ $attendance->id }}">Details</a> |  --}}
+                            <a class="btn btn-info btn-xs" href="{{ route('attendance.show',$attendance->id) }}">Details</a>
                             {{--  <a href="/admin/attendance/edit/{{ $attendance->id }}">Edit</a> |   --}}
-                            <a class="btn btn-primary btn-xs" href="{{ route('attendance.edit',$attendance->id) }}">Edit</a> |
-                        
-                            <a href="/admin/attendance/delete/{{ $attendance->id }}">Delete</a>
-
-                            {{--  <a class="btn btn-info btn-xs" href="{{ route('AttendanceController.getAttendance',$attendance->id) }}">Show</a>
-                            <a class="btn btn-primary btn-xs" href="{{ route('AttendanceController.editAttendance',$attendance->id) }}">Edit</a>
-                            <a class="btn btn-default btn-xs" href="{{ route('AttendanceController.deleteAttendance',$attendance->id) }}">Delete</a>  --}}
+                            <a class="btn btn-primary btn-xs" href="{{ route('attendance.edit',$attendance->id) }}">Edit</a> 
+                            <a class="btn btn-danger btn-xs" href="{{ route('deleteattendance',$attendance->id) }}">Delete</a> 
+                            {{--  <a href="/admin/attendance/delete/{{ $attendance->id }}">Delete</a>  --}}
 
                         </td>
                     </tr>
