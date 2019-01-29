@@ -31,7 +31,7 @@
                         @can('income_delete')
                             <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
                         @endcan
-
+                        <th>@lang('quickadmin.income.fields.income-name')</th>
                         <th>@lang('quickadmin.income.fields.income-category')</th>
                         <th>@lang('quickadmin.income.fields.entry-date')</th>
                         <th>@lang('quickadmin.income.fields.amount')</th>
@@ -47,7 +47,7 @@
                                 @can('income_delete')
                                     <td></td>
                                 @endcan
-
+                                <td field-key='income_name'>{{ $income->name or '' }}</td>
                                 <td field-key='income_category'>{{ $income->income_category->name or '' }}</td>
                                 <td field-key='entry_date'>{{ $income->entry_date }}</td>
                                 <td field-key='amount'>{{ $income->income_currency->symbol . ' ' . number_format($income->amount, 2, $income->income_currency->money_format_decimal, $income->income_currency->money_format_thousands) }}</td>

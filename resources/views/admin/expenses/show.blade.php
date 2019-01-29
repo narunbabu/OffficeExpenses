@@ -13,6 +13,10 @@
                 <div class="col-md-6">
                     <table class="table table-bordered table-striped">
                         <tr>
+                            <th>@lang('quickadmin.expense.fields.expense-name')</th>
+                            <td field-key='expense_name'>{{ $expense->name or '' }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('quickadmin.expense.fields.expense-category')</th>
                             <td field-key='expense_category'>{{ $expense->expense_category->name or '' }}</td>
                         </tr>

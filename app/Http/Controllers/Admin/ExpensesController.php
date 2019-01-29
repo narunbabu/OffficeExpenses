@@ -11,7 +11,7 @@ use App\Http\Requests\Admin\UpdateExpensesRequest;
 // use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
-
+use DB;
 class ExpensesController extends Controller
 {
     /**
@@ -31,9 +31,10 @@ class ExpensesController extends Controller
         //         Session::put('Expense.filter', 'my');
         //     }
         // }
+        // $expenses=DB::table('expenses')->get();
 
                 $expenses = Expense::all();
-
+                // return $expenses;
         return view('admin.expenses.index', compact('expenses'));
     }
 

@@ -13,7 +13,7 @@ use App\Traits\FilterByUser;
 */
 class ExpenseCategory extends Model
 {
-    use FilterByUser;
+    // use FilterByUser;
 
     protected $fillable = ['name', 'created_by_id'];
     

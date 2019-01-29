@@ -54,6 +54,7 @@ return [
 	'income' => [
 		'title' => 'Income',
 		'fields' => [
+			'income-name' => 'Income Name',
 			'income-category' => 'Income Category',
 			'entry-date' => 'Entry date',
 			'amount' => 'Amount',
@@ -65,6 +66,7 @@ return [
 	'expense' => [
 		'title' => 'Expenses',
 		'fields' => [
+			'expense-name' => 'Expense Name',
 			'expense-category' => 'Expense Category',
 			'entry-date' => 'Entry date',
 			'amount' => 'Amount',

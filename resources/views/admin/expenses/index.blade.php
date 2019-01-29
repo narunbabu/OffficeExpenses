@@ -31,7 +31,8 @@
                         @can('expense_delete')
                             <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
                         @endcan
-
+                        
+                        <th>@lang('quickadmin.expense.fields.expense-name')</th>
                         <th>@lang('quickadmin.expense.fields.expense-category')</th>
                         <th>@lang('quickadmin.expense.fields.entry-date')</th>
                         <th>@lang('quickadmin.expense.fields.amount')</th>
@@ -48,7 +49,7 @@
                                 @can('expense_delete')
                                     <td></td>
                                 @endcan
-
+                                <td field-key='expense_name'>{{ $expense->name or '' }}</td>
                                 <td field-key='expense_category'>{{ $expense->expense_category->name or '' }}</td>
                                 <td field-key='entry_date'>{{ $expense->entry_date }}</td>
                                 <td field-key='amount'>{{ $expense->expense_currency->symbol  . ' ' . number_format($expense->amount, 2, $expense->expense_currency->money_format_decimal, $expense->expense_currency->money_format_thousands) }}</td>

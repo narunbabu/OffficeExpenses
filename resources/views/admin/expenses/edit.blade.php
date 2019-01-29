@@ -13,6 +13,20 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
+                    {!! Form::label('name', trans('quickadmin.expense.fields.expense-name').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('name'))
+                        <p class="help-block">
+                            {{ $errors->first('name') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12 form-group">
                     {!! Form::label('expense_category_id', trans('quickadmin.expense.fields.expense-category').'*', ['class' => 'control-label']) !!}
                     {!! Form::select('expense_category_id', $expense_categories, old('expense_category_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>

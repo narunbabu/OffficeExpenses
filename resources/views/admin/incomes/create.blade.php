@@ -12,6 +12,18 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
+                    {!! Form::label('name', trans('quickadmin.income.fields.income-name').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('name', old('name'), ['class' => 'form-control',  'placeholder' => '', 'required' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('name'))
+                        <p class="help-block">
+                            {{ $errors->first('name') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
                     {!! Form::label('income_category_id', trans('quickadmin.income.fields.income-category').'*', ['class' => 'control-label']) !!}
                     {!! Form::select('income_category_id', $income_categories, old('income_category_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>
