@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 //for ATTENDANCE routes
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function (){
 
-    // Route::resource('attendance','AttendanceController');
+    Route::resource('attendance','AttendanceController');
 
     Route::get('attendance','AttendanceController@index')->name('attendance');
 
@@ -62,7 +62,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function (){
     Route::get('attendances','AttendanceController@all')->name('attendances');
 
     Route::get('attendance/details/{id}','AttendanceController@getAttendance');
-    Route::get('atedit/{id}','AttendanceController@editAttendance');
+    // Route::get('atedit/{id}','AttendanceController@editAttendance');
     Route::get('attendance/delete/{id}','AttendanceController@deleteAttendance');
 
     Route::get('search','AttendanceController@searchAttendance')->name('search');

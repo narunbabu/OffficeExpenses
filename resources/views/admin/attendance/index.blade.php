@@ -30,7 +30,8 @@
                         <td>
                             <a href="/admin/attendance/details/{{ $attendance->id }}">Details</a> |
                             
-                            <a href="/admin/atedit/{{ $attendance->id }}">Edit</a> | 
+                            {{--  <a href="/admin/attendance/edit/{{ $attendance->id }}">Edit</a> |   --}}
+                            <a class="btn btn-primary btn-xs" href="{{ route('attendance.edit',$attendance->id) }}">Edit</a> |
                         
                             <a href="/admin/attendance/delete/{{ $attendance->id }}">Delete</a>
 
