@@ -11,6 +11,13 @@ use DB;
 
 class AttendanceController extends Controller
 {
+    public function ucwordArray($musers){
+        $users=array();
+        foreach($musers as $u){
+            array_push($users,ucwords($u));
+        }
+        return $users;
+    }
     public function index(Request $request){
         
         date_default_timezone_set('Asia/Kolkata');
@@ -19,7 +26,8 @@ class AttendanceController extends Controller
         $attendances = DB::table('attendances')->where('date', $date)->get();
             // return $attendances;
             // return view('admin.attendance.index', ['attendances' => $attendance]);
-        $users = DB::table('users')->pluck('name');
+        $users = DB::table('users')->where('name', '<>', 'admin')->pluck('name');
+        $users=$this->ucwordArray($users);
         // $users = User::all();
         // return $users;
             return view('admin.attendance.index',compact('attendances','users'));
@@ -139,10 +147,13 @@ class AttendanceController extends Controller
         // }
     }
 
+
     public function addAttendance(Request $request){
         // return $request;
-        $users = DB::table('users')->pluck('name');
-
+        
+        $musers = DB::table('users')->where('name', '<>', 'admin')->pluck('name');
+        $users=$this->ucwordArray($musers);
+            // return $users;
          return view('admin.attendance.addAttendance',compact('users'));
 
         // return $request;
