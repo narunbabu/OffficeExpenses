@@ -126,7 +126,7 @@ class AttendanceController extends Controller
     }
 
     public function editAttendance(Request $request, $id){
-        return $id;
+        // return $id;
         $data = DB::table('attendances')->where('id', $id)->first();
             return view('admin.attendance.editAttendance', ['data' => $data]);
         
