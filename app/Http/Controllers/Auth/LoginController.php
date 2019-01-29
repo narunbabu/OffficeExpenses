@@ -20,6 +20,7 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+    
 
     use AuthenticatesUsers;
 
@@ -38,6 +39,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        
         $this->middleware('guest', ['except' => 'logout']);
     }
 

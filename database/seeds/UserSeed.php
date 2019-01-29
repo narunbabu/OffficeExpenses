@@ -11,9 +11,11 @@ class UserSeed extends Seeder
      */
     public function run()
     {
+        // ,'password' => '$2y$10$msflsjAZ7jGwsJBZ18Uthu.C8DWDzxdRGhuwQpFUgreL4MPPxU0zq'
         $items = [
             
-            ['id' => 1, 'name' => 'Admin', 'email' => 'admin@ameyem.com', 'password' => '$2y$10$msflsjAZ7jGwsJBZ18Uthu.C8DWDzxdRGhuwQpFUgreL4MPPxU0zq', 'role_id' => 1, 'remember_token' => '', 'currency_id' => 1],
+            
+            ['id' => 1, 'name' => 'Admin', 'email' => 'ab@ameyem.com', 'password' =>bcrypt('arun@123'), 'role_id' => 1, 'remember_token' => '', 'currency_id' => 1],
 
         ];
 

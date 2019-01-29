@@ -4,6 +4,8 @@
 @section('content')
     <h2>Update Attendance</h2>
     <hr />
+    {{--  {!! Form::model($attendance, ['method' => 'PATCH','route' => ['AttendanceController.update', $attendance->id]]) !!}  --}}
+    
 	<form class="m-t" method="post" action="{{ route('trytoupdateattendance') }}" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<input type="hidden" value="{{ $data->id}}" id="id" name="id">

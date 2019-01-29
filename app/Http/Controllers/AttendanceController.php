@@ -209,30 +209,32 @@ class AttendanceController extends Controller
     }
 
     public function update(Request $request){
-        
-        $date = $request->input('date');
-        $username = $request->input('username');
-        $attendance = (int)$request->input('attendance');
-        $in = $request->input('in');
-        $out = $request->input('out');
+        $id = $request->input('id');
+        // $date = $request->input('date');
+        // $username = $request->input('username');
+        // $attendance = (int)$request->input('attendance');
+        // $in = $request->input('in');
+        // $out = $request->input('out');
 
-        date_default_timezone_set('Asia/Kolkata');
-        $currentDate = date('Y-m-d H:i:s', time());
+        // date_default_timezone_set('Asia/Kolkata');
+        // $currentDate = date('Y-m-d H:i:s', time());
 
-        $data = array('date' => $date, 
-                    'username' => $username, 
-                    'attendance' => $attendance, 
-                    'in' => $in, 
-                    'out' => $out, 
-                    'created_at' => $currentDate, 
-                    'updated_at' => $currentDate);
+        // $data = array('date' => $date, 
+        //             'username' => $username, 
+        //             'attendance' => $attendance, 
+        //             'in' => $in, 
+        //             'out' => $out, 
+        //             'created_at' => $currentDate, 
+        //             'updated_at' => $currentDate);
         
-        if(DB::table('attendances')->insert($data)){
-            return redirect('/admin/attendance');
-        }
-        else{
-            var_dump(DB::table('attendances')->insert($data));
-        }
+        // if(DB::table('attendances')->insert($data)){
+        //     return redirect('/admin/attendance');
+        // }
+        // else{
+        //     var_dump(DB::table('attendances')->insert($data));
+        // }
+
+        attendance::find($id)->update($request->all());
         return redirect('/admin/attendance');
     }
 
@@ -246,40 +248,44 @@ class AttendanceController extends Controller
 
         // return $request;
         
-        $addattendance = DB::table('attendances')->where('date','=', $request->date)->where('username','=', $request->name)->count();
-            // return $addattendance;
-        if($addattendance==0){
+        // $addattendance = DB::table('attendances')->where('date','=', $request->date)->where('username','=', $request->name)->count();
+        //     // return $addattendance;
+        // if($addattendance==0){
 
-            $users = $request;
+            // $users = $request;
             // return $users;
             for($i=0;$i<count($request->name);$i++)
             {
-                $record = [
-                    'date' => $request->date,
-                    'username' => $request->name[$i],
-                    'in' => $request->in[$i],
-                    'out' => $request->out[$i],
-                    'attendance' => $request->attendance,
-                ];
-                attendance::create($record);
+                if ($request->is_checked[$i]==1){
+                    $record = [
+                        'date' => $request->date,
+                        'username' => $request->name[$i],
+                        'in' => $request->in[$i],
+                        'out' => $request->out[$i],
+                        'attendance' => $request->attendance,
+                    ];
+                    attendance::create($record);
+                }
+                
 
                 // echo($request->name[0]);
 
                 // attendance::create($request->all());
                 // return $record;
             }
-            return redirect('/admin/attendance');
-        }
+            // return redirect('/admin/attendance');
+            return redirect()->route('attendances');
+        // }
            
-        else{
-        // if(DB::table('attendances')->insert($record)){
-        //     return redirect('/admin/attendance');
-        // }
         // else{
-        //     var_dump(DB::table('attendances')->insert($record));
+        // // if(DB::table('attendances')->insert($record)){
+        // //     return redirect('/admin/attendance');
+        // // }
+        // // else{
+        // //     var_dump(DB::table('attendances')->insert($record));
+        // // }
+        // return redirect('/admin/attendance')->with('message','Attendance alredy taken.');
         // }
-        return redirect('/admin/attendance')->with('message','Attendance alredy taken.');
-        }
         
     }
 }

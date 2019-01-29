@@ -51,17 +51,22 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 });
 //for ATTENDANCE routes
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function (){
+
+    // Route::resource('attendance','AttendanceController');
+
     Route::get('attendance','AttendanceController@index')->name('attendance');
+
     Route::get('addAttendance','AttendanceController@addAttendance')->name('addAttendance');
+
     
     Route::get('attendances','AttendanceController@all')->name('attendances');
-    // Route::get('attendance/search', function () {
-    //     return view('admin/attendance/search');
-    // })->name('search');
-    Route::get('search','AttendanceController@searchAttendance')->name('search');
+
     Route::get('attendance/details/{id}','AttendanceController@getAttendance');
     Route::get('attendance/edit/{id}','AttendanceController@editAttendance');
     Route::get('attendance/delete/{id}','AttendanceController@deleteAttendance');
+
+    Route::get('search','AttendanceController@searchAttendance')->name('search');
+    
 
     Route::post('trytoaddattendance','AttendanceController@store')->name('trytoaddattendance');
     Route::post('trytoupdateattendance','AttendanceController@update')->name('trytoupdateattendance');
